@@ -4,29 +4,45 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather App</title>
+    <link rel="stylesheet" href="src/style.css" />
   </head>
   <body>
-    <h1>City, Province</h1>
-  <p>Day and Time
-      <br />
-      Percipotation 
-      <br />
-      Wind 
-      <div>Temp + Icon </div>
-      <div>Motivational quote </div>
-      </p>
-Forecast
-    <form>
-      <input type="search" placeholder="Enter a city" required />
-      <input type="submit" value="Search" />
-    </form>
-    <footer>
-      Coded by
-      <a href="https://github.com/dew-9" target="blank">Diane E Williston</a>;
-      Site is open-sourced on
-      <a href="https://github.com/dew-9/weatherapp" target="blank"> GitHub</a>
-      and hosted on
-      <a href="https://dew9weatherapp.netlify.app/" target="blank">Netlify</a>
-    </footer>
+    <div class="weather-app">
+      <div class="weather-app-main">
+        <div>
+          <h1>City, Province</h1>
+          <div class="weather-info">
+            Day and Time
+            <br />
+            Percipitation
+            <br />
+            Wind
+            <br />
+           <div class="current-temp"> Temp ℃ 🌧</div>
+          </p>
+        </div>
+        <div><h2>Motivational quote</h2></div>
+      </div>
+      Forecast
+      <form class="search-form">
+        <input
+          type="search"
+          placeholder="Enter a city"
+          required
+          class="search-box"
+        />
+        <input type="submit" value="Search" class="search-button" />
+      </form>
+      <footer>
+        Coded by
+        <a href="https://github.com/dew-9" target="blank">Diane E Williston</a>;
+        Site is open-sourced on
+        <a href="https://github.com/dew-9/weatherapp2" target="blank">
+          GitHub</a
+        >
+        and hosted on
+        <a href="https://dew9weatherapp.netlify.app/" target="blank">Netlify</a>
+      </footer>
+    </div>
   </body>
 </html>
