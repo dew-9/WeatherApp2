@@ -8,12 +8,18 @@ function refreshWeather(response) {
   let windElement = document.querySelector("#wind");
   let timeElement = document.querySelector("#time");
   let date = new Date(response.data.time * 1000);
+  let weatherIcon = document.querySelector("#weatherIcon");
   cityElement.innerHTML = response.data.city;
-  currentTemp.innerHTML = Math.round(temperature);
+  currentTemp.innerHTML = `${Math.round(temperature)}℃`;
   descriptionElement.innerHTML = response.data.condition.description;
   percipitationElement.innerHTML = `Percipitation: ${response.data.temperature.humidity}%`;
   windElement.innerHTML = `Wind: ${response.data.wind.speed} km/h`;
   timeElement.innerHTML = formatDate(date);
+  weatherIcon.innerHTML = `<img
+            src="${response.data.condition.icon_url}"
+            alt="Weather Icon"
+            class="current-temp";
+            width = "40";>`;
 }
 
 function formatDate(date) {
