@@ -9,27 +9,26 @@
   <body>
     <div class="weather-app">
       <div class="weather-app-main">
-        <div>
-          <h1>City, Province</h1>
-          <div class="weather-info">
-            Day and Time
-            <br />
-            Percipitation
-            <br />
-            Wind
-            <br />
-           <div class="current-temp"> Temp ℃ 🌧</div>
-          </p>
-        </div>
+        <h1 id="city">City</h1>
         <div><h2>Motivational quote</h2></div>
       </div>
+      <div class="weather-info">
+        Day and Time
+        <br />
+        Percipitation
+        <br />
+        Wind
+        <br />
+        <div class="current-temp">Temp ℃ 🌧</div>
+      </div>
       Forecast
-      <form class="search-form">
+      <form class="search-form" id="search-form">
         <input
           type="search"
           placeholder="Enter a city"
           required
           class="search-box"
+          id="search-box"
         />
         <input type="submit" value="Search" class="search-button" />
       </form>
@@ -44,5 +43,6 @@
         <a href="https://dew9weatherapp.netlify.app/" target="blank">Netlify</a>
       </footer>
     </div>
+    <script src="src/script.js"></script>
   </body>
 </html>
