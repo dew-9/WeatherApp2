@@ -53,8 +53,25 @@ h2 {
   margin-left: 5px;
   padding: 5px;
 }
-
-footer {
+**** .forecast {
+  text-decoration: underline;
+  font-size: 20px;
+}
+.weather-forecast {
+  text-align: center;
+}
+.forecast-date {
+  font-weight: bold;
+  font-size: 25px;
+}
+.weather-icon {
+  display: inline;
+}
+.forecast-temp {
+  font-size: 25px;
+  line-height: 35px;
+}
+**** footer {
   border-top-width: 1px;
   border-top-style: solid;
   border-top-color: rgb(86, 171, 142);

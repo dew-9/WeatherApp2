@@ -59,4 +59,31 @@ function searchSubmit(event) {
 let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", searchSubmit);
 
+function displayForecast() {
+  let forecast = document.querySelector("#forecast");
+  let days = ["Tue", "Wed", "Thu", "Fri", "Sat"];
+  let forecastHtml = "";
+  days.forEach(function (day) {
+    forecastHtml =
+      forecastHtml +
+      `<div class="weather-forecast">
+        <div class="row">
+          <div class="col-2">
+            <span class="forecast-date">${day}</span>
+            <br />
+            <img
+              src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/few-clouds-day.png"
+              alt="weather icon"
+              class="weather-icon"
+              width="35px"
+            />
+            <span class="forecast-temp">12℃</span>
+          </div>
+        </div>
+      </div>`;
+  });
+  forecast.innerHTML = forecastHtml;
+}
+
 searchCity("Hamilton");
+displayForecast();
