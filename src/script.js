@@ -20,6 +20,7 @@ function refreshWeather(response) {
             alt="Weather Icon"
             class="current-temp";
             width = "40";>`;
+  getForecast(response.data.city);
 }
 
 function formatDate(date) {
@@ -59,7 +60,14 @@ function searchSubmit(event) {
 let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", searchSubmit);
 
-function displayForecast() {
+function getForecast(city) {
+  let apiKey = "6o808f4d3ta99b430e5547b006a7c43c";
+  let apiURL = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
+  axios.get(apiURL).then(displayForecast);
+}
+
+function displayForecast(response) {
+  console.log(response.data);
   let forecast = document.querySelector("#forecast");
   let days = ["Tue", "Wed", "Thu", "Fri", "Sat"];
   let forecastHtml = "";
@@ -86,4 +94,4 @@ function displayForecast() {
 }
 
 searchCity("Hamilton");
-displayForecast();
+getForecast("Hamilton");
