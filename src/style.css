@@ -1,5 +1,5 @@
 body {
-  background-color: rgb(102, 179, 153);
+  background-color: rgb(102, 155, 179);
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
 .weather-app {
@@ -30,16 +30,21 @@ h2 {
   margin-block-end: 1em;
   margin-inline-start: 0px;
   margin-inline-end: 0px;
+  margin: 0px auto 5px;
+}
+.dateTime {
+  margin: 0px;
 }
 .search-form {
-  padding: 5px 0px 10px 0px;
+  padding: 0px 0px 10px 0px;
+  text-align: center;
 }
 .search-box {
   width: 80%;
   background-color: rgb(216, 216, 216);
   border: none;
   font-size: 18px;
-  padding: 8px;
+  padding: 5px;
 }
 .current-temp {
   font-size: 30px;
@@ -47,22 +52,26 @@ h2 {
   line-height: 65px;
 }
 .search-button {
-  background-color: rgb(102, 179, 153);
-  border-color: rgb(86, 171, 142);
+  background-color: rgb(102, 155, 179);
+  border-color: rgb(76, 121, 142);
   font-size: 20px;
   margin-left: 5px;
   padding: 5px;
 }
 .forecast {
+  text-align: center;
   text-decoration: underline;
   font-size: 20px;
 }
 .weather-forecast {
-  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 15px auto 10px auto;
 }
 .forecast-date {
   font-weight: bold;
-  font-size: 25px;
+  font-size: 20px;
 }
 .weather-icon {
   display: inline;
@@ -74,6 +83,6 @@ h2 {
 footer {
   border-top-width: 1px;
   border-top-style: solid;
-  border-top-color: rgb(86, 171, 142);
+  border-top-color: rgb(76, 121, 142);
   padding: 15px 0 0 0;
 }

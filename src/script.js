@@ -9,7 +9,7 @@ function refreshWeather(response) {
   let timeElement = document.querySelector("#time");
   let date = new Date(response.data.time * 1000);
   let weatherIcon = document.querySelector("#weatherIcon");
-  cityElement.innerHTML = response.data.city;
+  cityElement.innerHTML = `${response.data.city}`;
   currentTemp.innerHTML = `${Math.round(temperature)}℃`;
   descriptionElement.innerHTML = response.data.condition.description;
   percipitationElement.innerHTML = `Percipitation: ${response.data.temperature.humidity}%`;
@@ -21,6 +21,14 @@ function refreshWeather(response) {
             class="current-temp";
             width = "40";>`;
   getForecast(response.data.city);
+}
+
+function quoteApi() {
+  let apiURL = "https://api.quotable.io/quotes/random";
+  axios.get(apiURL).then(motivationalQuote);
+}
+function motivationalQuote(response) {
+  comsole.log(response.data);
 }
 
 function formatDate(date) {
@@ -77,7 +85,7 @@ function formatDay(timestamp) {
 function getForecast(city) {
   let apiKey = "6o808f4d3ta99b430e5547b006a7c43c";
   let apiURL = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
-  axios.get(apiURL).then(displayForecast);
+  axios(apiURL).then(displayForecast);
 }
 
 function displayForecast(response) {
@@ -86,25 +94,22 @@ function displayForecast(response) {
 
   let forecastHtml = "";
   response.data.daily.forEach(function (day, index) {
-    if (index < 6) {
+    if (index > 0 && index < 6) {
       forecastHtml =
         forecastHtml +
         `<div class="weather-forecast">
-        <div class="row">
-          <div class="col-2">
             <span class="forecast-date">${formatDay(day.time)}</span>
             <br />
             <img
               src="${day.condition.icon_url}"
               alt="weather icon"
               class="weather-icon"
-              width="35px"
+              width="50px"
             />
             <span class="forecast-temp">${Math.round(
               day.temperature.day
             )}℃</span>
-          </div>
-        </div>
+         
       </div>`;
     }
   });
@@ -113,3 +118,4 @@ function displayForecast(response) {
 
 searchCity("Hamilton");
 getForecast("Hamilton");
+quoteApi();
